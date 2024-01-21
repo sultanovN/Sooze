@@ -86,7 +86,11 @@ void ASoozeCharacter::Landed(const FHitResult& Hit)
 {
 	Super::Landed(Hit);
 
-	StopGliding();
+	if(IsGliding)
+	{ 
+		StopGliding(); 
+	}
+	
 }
 
 //////////////////////////////////////////////////////////////////////////

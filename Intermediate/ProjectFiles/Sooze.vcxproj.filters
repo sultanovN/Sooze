@@ -11,6 +11,9 @@
     <None Include="..\..\Source\SoozeEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -52,6 +55,24 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Sooze\SoozeGameMode.h">
       <Filter>Source\Sooze</Filter>
+    </ClInclude>
+    <Filter Include="Source\Sooze\Private">
+      <UniqueIdentifier>{890F2703-BF4F-3ECC-BC4D-BB78BE76A661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sooze\Private\InteractObjects">
+      <UniqueIdentifier>{C76E1236-A2DA-3406-BBA2-2C215F6654F1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Sooze\Private\InteractObjects\SZLaunchField.cpp">
+      <Filter>Source\Sooze\Private\InteractObjects</Filter>
+    </ClCompile>
+    <Filter Include="Source\Sooze\Public">
+      <UniqueIdentifier>{2FE43FCA-0066-3861-9341-F0122B7A00BE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sooze\Public\InteractObjects">
+      <UniqueIdentifier>{5588604B-4646-3514-BC23-690B1AF670FA}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Sooze\Public\InteractObjects\SZLaunchField.h">
+      <Filter>Source\Sooze\Public\InteractObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
