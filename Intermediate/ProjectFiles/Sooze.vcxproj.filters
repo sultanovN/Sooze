@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Sooze.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Sooze.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SoozeEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Sooze">
+      <UniqueIdentifier>{65AE3584-C242-3C7B-9234-9D829BC764AE}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Sooze\Sooze.Build.cs">
+      <Filter>Source\Sooze</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Sooze\Sooze.cpp">
+      <Filter>Source\Sooze</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Sooze\Sooze.h">
+      <Filter>Source\Sooze</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Sooze\SoozeCharacter.cpp">
+      <Filter>Source\Sooze</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Sooze\SoozeCharacter.h">
+      <Filter>Source\Sooze</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Sooze\SoozeGameMode.cpp">
+      <Filter>Source\Sooze</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Sooze\SoozeGameMode.h">
+      <Filter>Source\Sooze</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

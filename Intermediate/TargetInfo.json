@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Sooze",
+			"Path": "..\\Source\\Sooze.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "SoozeEditor",
+			"Path": "..\\Source\\SoozeEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

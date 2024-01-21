@@ -1,0 +1,23 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/UE_Projects/Sooze/Content/ThirdPerson/Input/IMC_Default.uasset",
+				"C:/UE_Projects/Sooze/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset",
+				"C:/UE_Projects/Sooze/Content/ThirdPerson/Input/Actions/IA_Glide.uasset",
+				"C:/UE_Projects/Sooze/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/CH/8WH0FXM1KZDMOZS2NNXEEW.uasset",
+				"C:/UE_Projects/Sooze/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/FZ/4XWWUGWFDLX56REQRH8Z9W.uasset",
+				"C:/UE_Projects/Sooze/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/HF/9H7TKAXH9DD8KI3TIXGI2I.uasset",
+				"C:/UE_Projects/Sooze/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/N9/UHCVWJNATB16HMESV35CGN.uasset",
+				"C:/UE_Projects/Sooze/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/FJ/FTB3IAMADN4YTCO4Z9VEFJ.uasset",
+				"C:/UE_Projects/Sooze/Content/Characters/Mannequins/Animations/ABP_Manny.uasset",
+				"C:/UE_Projects/Sooze/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/MO/72II2GSLK9VS0ULW9SACWH.uasset",
+				"C:/UE_Projects/Sooze/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/CI/KST702KSCRZWYV56G3VJBD.uasset",
+				"C:/UE_Projects/Sooze/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset"
+			]
+		}
+	]
+}
