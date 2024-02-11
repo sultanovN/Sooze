@@ -79,7 +79,6 @@ void ASoozeCharacter::Tick(float DeltaSeconds)
 {
 	Delta = DeltaSeconds;
 	DescentPlayer();
-
 }
 
 void ASoozeCharacter::Landed(const FHitResult& Hit)
@@ -91,6 +90,11 @@ void ASoozeCharacter::Landed(const FHitResult& Hit)
 		StopGliding(); 
 	}
 	
+}
+
+void ASoozeCharacter::SetGravity(float Scale)
+{
+	GetCharacterMovement()->GravityScale = Scale;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -180,7 +184,8 @@ void ASoozeCharacter::StartGliding()
 		RecordOriginalSettings();
 
 		GetCharacterMovement()->RotationRate = FRotator(0.f, 250.f, 0.f);
-		GetCharacterMovement()->GravityScale = 0.0;
+		//GetCharacterMovement()->GravityScale = 0.0;
+		if (InField) { GetCharacterMovement()->GravityScale = -1.0f; }
 		GetCharacterMovement()->AirControl = 0.9;
 		GetCharacterMovement()->BrakingDecelerationFalling = 350.f;
 		GetCharacterMovement()->MaxAcceleration = 1024;
@@ -237,14 +242,16 @@ void ASoozeCharacter::DescentPlayer()
 	if (CurrentVelocity.Z != DescendingRate * -1.f && IsGliding == true)
 	{
 		CurrentVelocity.Z = UKismetMathLibrary::FInterpTo(CurrentVelocity.Z, DescendingRate, Delta, 3.f);
-		GetCharacterMovement()->Velocity.Z = DescendingRate * -1.f;
+		float Gravity = 1.0f;
+		if (GetCharacterMovement()->GravityScale < 0.0f) { Gravity = GetCharacterMovement()->GravityScale; }
+		GetCharacterMovement()->Velocity.Z = DescendingRate * -1.f * Gravity;
 	}
 }
 
 void ASoozeCharacter::ApplyOriginalSettings()
 {
 	 GetCharacterMovement()->bOrientRotationToMovement = OriginalOrientRotation;
-	 GetCharacterMovement()->GravityScale = OriginalGravityScale;
+	 if(!InField){ GetCharacterMovement()->GravityScale = OriginalGravityScale; }
 	 GetCharacterMovement()->AirControl = OriginalAirControl;
 	 GetCharacterMovement()->BrakingDecelerationFalling = OriginalDecelration;
 	 GetCharacterMovement()->MaxAcceleration = OriginalAcceleration;

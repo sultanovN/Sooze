@@ -57,6 +57,10 @@ class ASoozeCharacter : public ACharacter
 public:
 	ASoozeCharacter();
 	
+	bool GetIsGliding() { return IsGliding; }
+
+	bool GetInField() { return InField; }
+	void SetInField(bool value) { InField = value; }
 
 protected:
 
@@ -82,6 +86,8 @@ protected:
 	bool IsGliding = false;
 
 	FVector CurrentVelocity;
+
+	bool InField = false;
 
 	bool OriginalOrientRotation; 
 	float OriginalGravityScale;
@@ -110,5 +116,7 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	void SetGravity(float Scale);
 };
 
