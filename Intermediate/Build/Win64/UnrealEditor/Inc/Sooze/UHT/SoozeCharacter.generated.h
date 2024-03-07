@@ -9,6 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UCustomCharacterMovementComponent;
 #ifdef SOOZE_SoozeCharacter_generated_h
 #error "SoozeCharacter.generated.h already included, missing '#pragma once' in SoozeCharacter.h"
 #endif
@@ -17,7 +18,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_22_SPARSE_DATA
 #define FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_22_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_22_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetCustomCharacterMovement);
+
+
 #define FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_22_ACCESSORS
 #define FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_22_INCLASS_NO_PURE_DECLS \
 private: \
@@ -36,7 +41,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ASoozeCharacter); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASoozeCharacter); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASoozeCharacter) \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASoozeCharacter) \
 	NO_API virtual ~ASoozeCharacter();
 
 

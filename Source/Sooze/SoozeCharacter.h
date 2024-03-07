@@ -13,7 +13,7 @@ class UInputMappingContext;
 class UInputAction;
 class UStaticMeshComponent;
 struct FInputActionValue;
-
+class UCustomCharacterMovementComponent;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
@@ -52,15 +52,25 @@ class ASoozeCharacter : public ACharacter
 	UInputAction* GlideAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ClimbAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* CancelClimbAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	float DescendingRate = 300.f;
 
 public:
-	ASoozeCharacter();
+	ASoozeCharacter(const FObjectInitializer& ObjectInitializer);
 	
 	bool GetIsGliding() { return IsGliding; }
 
 	bool GetInField() { return InField; }
 	void SetInField(bool value) { InField = value; }
+
+private:
+	UPROPERTY()
+	UCustomCharacterMovementComponent* MovementComponent;
 
 protected:
 
@@ -82,8 +92,13 @@ protected:
 
 	void ApplyOriginalSettings();
 
+	void Climb();
+	void CancelClimb();
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	bool IsGliding = false;
+
+	
 
 	FVector CurrentVelocity;
 
@@ -116,6 +131,9 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	UFUNCTION(BlueprintPure)
+	FORCEINLINE UCustomCharacterMovementComponent* GetCustomCharacterMovement() const { return MovementComponent; }
 
 	void SetGravity(float Scale);
 };

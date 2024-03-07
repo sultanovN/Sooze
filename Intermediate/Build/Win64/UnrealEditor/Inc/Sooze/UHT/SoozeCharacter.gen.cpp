@@ -17,10 +17,65 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 	SOOZE_API UClass* Z_Construct_UClass_ASoozeCharacter();
 	SOOZE_API UClass* Z_Construct_UClass_ASoozeCharacter_NoRegister();
+	SOOZE_API UClass* Z_Construct_UClass_UCustomCharacterMovementComponent_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Sooze();
 // End Cross Module References
+	DEFINE_FUNCTION(ASoozeCharacter::execGetCustomCharacterMovement)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(UCustomCharacterMovementComponent**)Z_Param__Result=P_THIS->GetCustomCharacterMovement();
+		P_NATIVE_END;
+	}
 	void ASoozeCharacter::StaticRegisterNativesASoozeCharacter()
 	{
+		UClass* Class = ASoozeCharacter::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "GetCustomCharacterMovement", &ASoozeCharacter::execGetCustomCharacterMovement },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics
+	{
+		struct SoozeCharacter_eventGetCustomCharacterMovement_Parms
+		{
+			UCustomCharacterMovementComponent* ReturnValue;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SoozeCharacter_eventGetCustomCharacterMovement_Parms, ReturnValue), Z_Construct_UClass_UCustomCharacterMovementComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::NewProp_ReturnValue_MetaData), Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::NewProp_ReturnValue_MetaData) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "SoozeCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASoozeCharacter, nullptr, "GetCustomCharacterMovement", nullptr, nullptr, Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::SoozeCharacter_eventGetCustomCharacterMovement_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::SoozeCharacter_eventGetCustomCharacterMovement_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(ASoozeCharacter);
 	UClass* Z_Construct_UClass_ASoozeCharacter_NoRegister()
@@ -30,6 +85,7 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 	struct Z_Construct_UClass_ASoozeCharacter_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -66,9 +122,21 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_GlideAction;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ClimbAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ClimbAction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CancelClimbAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_CancelClimbAction;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DescendingRate_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_DescendingRate;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MovementComponent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_MovementComponent;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_IsGliding_MetaData[];
 #endif
@@ -83,11 +151,16 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Sooze,
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::DependentSingletons) < 16);
+	const FClassFunctionLinkInfo Z_Construct_UClass_ASoozeCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ASoozeCharacter_GetCustomCharacterMovement, "GetCustomCharacterMovement" }, // 3906636790
+	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "SoozeCharacter.h" },
 		{ "ModuleRelativePath", "SoozeCharacter.h" },
+		{ "ObjectInitializerConstructorDeclared", "" },
 	};
 #endif
 #if WITH_METADATA
@@ -194,6 +267,22 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideAction = { "GlideAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, GlideAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideAction_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideAction_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_ClimbAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "SoozeCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_ClimbAction = { "ClimbAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, ClimbAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_ClimbAction_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_ClimbAction_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_CancelClimbAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "SoozeCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_CancelClimbAction = { "CancelClimbAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, CancelClimbAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_CancelClimbAction_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_CancelClimbAction_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DescendingRate_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
@@ -201,6 +290,13 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DescendingRate = { "DescendingRate", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, DescendingRate), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DescendingRate_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DescendingRate_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MovementComponent_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "SoozeCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MovementComponent = { "MovementComponent", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, MovementComponent), Z_Construct_UClass_UCustomCharacterMovementComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MovementComponent_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MovementComponent_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_IsGliding_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -222,7 +318,10 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MoveAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_LookAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_ClimbAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_CancelClimbAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DescendingRate,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MovementComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_IsGliding,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASoozeCharacter_Statics::StaticCppClassTypeInfo = {
@@ -233,11 +332,11 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_ASoozeCharacter_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::PropPointers),
 		0,
 		0x008000A4u,
@@ -263,9 +362,9 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASoozeCharacter, ASoozeCharacter::StaticClass, TEXT("ASoozeCharacter"), &Z_Registration_Info_UClass_ASoozeCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASoozeCharacter), 2175969351U) },
+		{ Z_Construct_UClass_ASoozeCharacter, ASoozeCharacter::StaticClass, TEXT("ASoozeCharacter"), &Z_Registration_Info_UClass_ASoozeCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASoozeCharacter), 3113653062U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_2353935479(TEXT("/Script/Sooze"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_3620370594(TEXT("/Script/Sooze"),
 		Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

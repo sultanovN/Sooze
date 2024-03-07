@@ -2,6 +2,8 @@
 
 #include "SoozeCharacter.h"
 #include "Engine/LocalPlayer.h"
+
+#include "Components/CustomCharacterMovementComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -18,7 +20,8 @@ DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 //////////////////////////////////////////////////////////////////////////
 // ASoozeCharacter
 
-ASoozeCharacter::ASoozeCharacter()
+ASoozeCharacter::ASoozeCharacter(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer.SetDefaultSubobjectClass<UCustomCharacterMovementComponent>(ACharacter::CharacterMovementComponentName))
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -55,6 +58,7 @@ ASoozeCharacter::ASoozeCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
+
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
@@ -63,6 +67,9 @@ void ASoozeCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+
+	check(GetCharacterMovement());
+	//check(MovementComponent);
 
 	//Add Input Mapping Context
 	if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
@@ -117,6 +124,11 @@ void ASoozeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 		//Gliding
 		EnhancedInputComponent->BindAction(GlideAction, ETriggerEvent::Started, this, &ASoozeCharacter::Glide);
+
+		//Climbing
+		EnhancedInputComponent->BindAction(ClimbAction, ETriggerEvent::Started, this, &ASoozeCharacter::Climb);
+
+		EnhancedInputComponent->BindAction(CancelClimbAction, ETriggerEvent::Started, this, &ASoozeCharacter::CancelClimb);
 	}
 	else
 	{
@@ -135,11 +147,23 @@ void ASoozeCharacter::Move(const FInputActionValue& Value)
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
 
-		// get forward vector
-		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-	
-		// get right vector 
-		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+		FVector ForwardDirection;
+		FVector RightDirection;
+
+		if (MovementComponent && MovementComponent->IsClimbing())
+		{
+			ForwardDirection = FVector::CrossProduct(MovementComponent->GetClimbSurfaceNormal(), -GetActorRightVector());
+			RightDirection = FVector::CrossProduct(MovementComponent->GetClimbSurfaceNormal(), GetActorUpVector());
+		}
+		else
+		{
+			// get forward vector
+			ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+
+			// get right vector 
+			RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+		}
+		
 
 		// add movement 
 		AddMovementInput(ForwardDirection, MovementVector.Y);
@@ -162,6 +186,7 @@ void ASoozeCharacter::Look(const FInputActionValue& Value)
 
 void ASoozeCharacter::Glide()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Glide"));
 	if (IsGliding == false)
 	{
 		StartGliding();
@@ -175,6 +200,7 @@ void ASoozeCharacter::Glide()
 
 void ASoozeCharacter::StartGliding()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Start Gliding"));
 	if (CanStartGliding())
 	{
 		GliderMesh->SetVisibility(true);
@@ -258,4 +284,21 @@ void ASoozeCharacter::ApplyOriginalSettings()
 	 GetCharacterMovement()->MaxWalkSpeed = OriginalWalkingSpeed;
 	 GetCharacterMovement()->bUseControllerDesiredRotation = OriginalDesiredRotation;
 	 GetCharacterMovement()->RotationRate = FRotator(0.f, 500.f, 0.f);
+}
+
+void ASoozeCharacter::Climb()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Climb"));
+	MovementComponent = Cast<UCustomCharacterMovementComponent>(GetCharacterMovement());
+
+	MovementComponent->TryClimbing();
+	
+}
+
+void ASoozeCharacter::CancelClimb()
+{
+	UE_LOG(LogTemp, Warning, TEXT("CancelClimb"));
+	MovementComponent = Cast<UCustomCharacterMovementComponent>(GetCharacterMovement());
+
+	MovementComponent->CancelClimbing();
 }
