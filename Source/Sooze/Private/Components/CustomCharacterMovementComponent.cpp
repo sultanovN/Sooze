@@ -84,7 +84,7 @@ void UCustomCharacterMovementComponent::PhysClimbing(float deltaTime, int32 Iter
 
 	ComputeSurfaceInfo();
 
-	if (ShouldStopClimbing())
+	if (ShouldStopClimbing() || ClimbDownToFloor())
 	{
 		StopClimbing(deltaTime, Iterations);
 		return;
@@ -210,6 +210,24 @@ void UCustomCharacterMovementComponent::SnapToClimbingSurface(float deltaTime) c
 	UpdatedComponent->MoveComponent(Offset * ClimbingSnapSpeed * deltaTime, Rotation, bSweep);
 }
 
+bool UCustomCharacterMovementComponent::ClimbDownToFloor() const
+{
+	FHitResult FloorHit;
+	if (!CheckFloor(FloorHit))
+	{
+		return false;
+	}
+
+	const bool bOnWalkableFloor = FloorHit.Normal.Z > GetWalkableFloorZ();
+
+	const float DownSpeed = FVector::DotProduct(Velocity, -FloorHit.Normal);
+	const bool bIsMovingTowardsFloor = DownSpeed >= MaxClimbingSpeed / 3 && bOnWalkableFloor;
+
+	const bool bIsClimbingFloor = CurrentClimbingNormal.Z > GetWalkableFloorZ();
+
+	return bIsMovingTowardsFloor || (bIsClimbingFloor && bOnWalkableFloor);
+}
+
 bool UCustomCharacterMovementComponent::CanStartClimbing()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Can start Climb?"));
@@ -255,6 +273,13 @@ bool UCustomCharacterMovementComponent::IsFacingSurface(const float SurfaceVerti
 	const float SteepnessMultiplier = 1 + (1 - SurfaceVerticalDot) * 5; //Steepness in SurfaceVerticalDot
 
 	return EyeHeightTrace(BaseLength* SteepnessMultiplier);
+}
+
+bool UCustomCharacterMovementComponent::CheckFloor(FHitResult& FloorHit) const
+{
+	const FVector Start = UpdatedComponent->GetComponentLocation();
+	const FVector End = Start + FVector::DownVector * FloorCheckDistance;
+	return GetWorld()->LineTraceSingleByChannel(FloorHit, Start, End, ECC_WorldStatic, ClimbQueryParams);
 }
 
 FQuat UCustomCharacterMovementComponent::GetClimbingRotation(float deltaTime) const

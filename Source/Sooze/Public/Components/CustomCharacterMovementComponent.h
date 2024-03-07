@@ -47,10 +47,14 @@ private:
 
 	void ComputeSurfaceInfo();
 	void ComputeClimbingVelocity(float deltaTime);
+
 	bool ShouldStopClimbing();
 	void StopClimbing(float deltaTime, int32 Iterations);
+
 	void MoveAlongClimbingSurface(float deltaTime);
 	void SnapToClimbingSurface(float deltaTime) const;
+
+	bool ClimbDownToFloor()const;
 
 	UPROPERTY(Category="Character Movement: Climbing", EditAnywhere)
 	int CollisionCapsuleRadius = 50;
@@ -82,6 +86,9 @@ private:
 	UPROPERTY(Category = "Character Movement: Climbing", EditAnywhere, meta = (ClampMin = "0.0", ClampMax = "80.0"))
 	float DistanceFromSurface = 45.f;
 
+	UPROPERTY(Category = "Character Movement: Climbing", EditAnywhere, meta = (ClampMin = "1.0", ClampMax = "500.0"))
+	float FloorCheckDistance = 100.f;
+
 	bool bWantsToClimb = false;
 
 	bool CanStartClimbing();
@@ -89,6 +96,8 @@ private:
 	bool EyeHeightTrace(const float TraceDistance) const;
 
 	bool IsFacingSurface(const float SurfaceVerticalDot) const;
+
+	bool CheckFloor(FHitResult& FloorHit) const;
 
 	TArray<FHitResult> CurrentWallHits;
 
