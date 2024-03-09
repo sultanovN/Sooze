@@ -52,6 +52,9 @@ class ASoozeCharacter : public ACharacter
 	UInputAction* GlideAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* DiveAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ClimbAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
@@ -60,6 +63,24 @@ class ASoozeCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	float DescendingRate = 300.f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float MinimumHeight = 250;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	FRotator GlideRotationRate = FRotator(0.f, 250.f, 0.f);
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float GlideAirControl = 0.9;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float GlideBrakingDecelerationFalling = 350.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float GlideMaxAcceleration = 1024;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float GlideMaxWalkSpeed = 1000;
+
 public:
 	ASoozeCharacter(const FObjectInitializer& ObjectInitializer);
 	
@@ -67,6 +88,7 @@ public:
 
 	bool GetInField() { return InField; }
 	void SetInField(bool value) { InField = value; }
+
 
 private:
 	UPROPERTY()
@@ -95,10 +117,23 @@ protected:
 	void Climb();
 	void CancelClimb();
 
+	void GlideDive();
+	
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	bool IsGliding = false;
 
-	
+	bool bIsDiving = false;
+
+	/*void UpdateFlyRotation(FVector2D MoveInput);
+
+	void SetFlying();
+
+	void UpdateFlySpeed();
+
+	void MoveFly();
+
+	void TryFlying();*/
 
 	FVector CurrentVelocity;
 
@@ -112,8 +147,22 @@ protected:
 	float OriginalAirControl; 
 	bool OriginalDesiredRotation;
 
-	float MinimumHeight = 250;
 	float Delta;
+
+	/*FVector MovementFlyVelocity;
+
+	bool bWantsToFly = false;
+	bool bIsFlying = false;
+
+	FRotator GlideRotCurrent;
+	FRotator GlideRotAccel;
+	float GlideRotMaxRoll;
+	float GlideRotMaxPitch;
+	float GlideSpeedAccel;
+	float GlideSpeedCurrent;
+	float GlideGravityAccel;
+	float GlideGravityMax = 1.0f;*/
+
 
 protected:
 	// APawn interface

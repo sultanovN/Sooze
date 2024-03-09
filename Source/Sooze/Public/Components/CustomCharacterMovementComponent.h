@@ -107,8 +107,6 @@ private:
 	FVector CurrentClimbingPosition;
 
 	FQuat GetClimbingRotation(float deltaTime) const;
-
-
 };
 
 

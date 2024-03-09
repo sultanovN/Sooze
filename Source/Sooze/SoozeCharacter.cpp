@@ -125,6 +125,12 @@ void ASoozeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 		//Gliding
 		EnhancedInputComponent->BindAction(GlideAction, ETriggerEvent::Started, this, &ASoozeCharacter::Glide);
 
+		//Dive
+		EnhancedInputComponent->BindAction(DiveAction, ETriggerEvent::None, this, &ASoozeCharacter::GlideDive);
+
+		//EnhancedInputComponent->BindAction(GlideAction, ETriggerEvent::Started, this, &ASoozeCharacter::TryFlying);
+
+
 		//Climbing
 		EnhancedInputComponent->BindAction(ClimbAction, ETriggerEvent::Started, this, &ASoozeCharacter::Climb);
 
@@ -141,6 +147,10 @@ void ASoozeCharacter::Move(const FInputActionValue& Value)
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
 
+	bIsDiving = false;
+
+	UE_LOG(LogTemp, Warning, TEXT("Moving"));
+
 	if (Controller != nullptr)
 	{
 		// find out which way is forward
@@ -155,6 +165,10 @@ void ASoozeCharacter::Move(const FInputActionValue& Value)
 			ForwardDirection = FVector::CrossProduct(MovementComponent->GetClimbSurfaceNormal(), -GetActorRightVector());
 			RightDirection = FVector::CrossProduct(MovementComponent->GetClimbSurfaceNormal(), GetActorUpVector());
 		}
+		/*else if (bIsFlying)
+		{
+			UpdateFlyRotation(MovementVector);
+		}*/
 		else
 		{
 			// get forward vector
@@ -162,13 +176,12 @@ void ASoozeCharacter::Move(const FInputActionValue& Value)
 
 			// get right vector 
 			RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+			
 		}
-		
-
-		// add movement 
 		AddMovementInput(ForwardDirection, MovementVector.Y);
 		AddMovementInput(RightDirection, MovementVector.X);
 	}
+
 }
 
 void ASoozeCharacter::Look(const FInputActionValue& Value)
@@ -225,6 +238,7 @@ void ASoozeCharacter::StopGliding()
 	ApplyOriginalSettings();
 	IsGliding = false;
 	GliderMesh->SetVisibility(false);
+	UE_LOG(LogTemp, Warning, TEXT("Stop Glide"));
 }
 
 bool ASoozeCharacter::CanStartGliding()
@@ -243,10 +257,12 @@ bool ASoozeCharacter::CanStartGliding()
 
 	if (Hit.bBlockingHit == false && GetCharacterMovement()->IsFalling() == true)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Can Glide"));
 		return true;
 	}
 	else
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Can Not Glide!"));
 		return false;
 	}
 }
@@ -260,7 +276,7 @@ void ASoozeCharacter::RecordOriginalSettings()
 	OriginalAcceleration = GetCharacterMovement()->MaxAcceleration;
 	OriginalWalkingSpeed = GetCharacterMovement()->MaxWalkSpeed;
 	OriginalDesiredRotation = GetCharacterMovement()->bUseControllerDesiredRotation;
-
+	UE_LOG(LogTemp, Warning, TEXT("rec set"));
 }
 
 void ASoozeCharacter::DescentPlayer()
@@ -271,6 +287,31 @@ void ASoozeCharacter::DescentPlayer()
 		float Gravity = 1.0f;
 		if (GetCharacterMovement()->GravityScale < 0.0f) { Gravity = GetCharacterMovement()->GravityScale; }
 		GetCharacterMovement()->Velocity.Z = DescendingRate * -1.f * Gravity;
+		UE_LOG(LogTemp, Warning, TEXT("Descent"));
+		if (bIsDiving)
+		{
+			DescendingRate = 1000.0f;
+			if (GetCharacterMovement()->MaxWalkSpeed <= 2600.f)
+			{
+				GetCharacterMovement()->MaxWalkSpeed += 20.0f;
+				GetCharacterMovement()->MaxAcceleration += 40.0f;
+			}
+			
+		}
+		else
+		{
+			DescendingRate = 300.f;
+		}
+	}
+}
+
+void ASoozeCharacter::GlideDive()
+{
+	if (IsGliding)
+	{
+		bIsDiving = true;
+		UE_LOG(LogTemp, Warning, TEXT("Dive"));
+		
 	}
 }
 
@@ -284,6 +325,7 @@ void ASoozeCharacter::ApplyOriginalSettings()
 	 GetCharacterMovement()->MaxWalkSpeed = OriginalWalkingSpeed;
 	 GetCharacterMovement()->bUseControllerDesiredRotation = OriginalDesiredRotation;
 	 GetCharacterMovement()->RotationRate = FRotator(0.f, 500.f, 0.f);
+	 UE_LOG(LogTemp, Warning, TEXT("apply set"));
 }
 
 void ASoozeCharacter::Climb()
@@ -302,3 +344,70 @@ void ASoozeCharacter::CancelClimb()
 
 	MovementComponent->CancelClimbing();
 }
+
+
+
+//void ASoozeCharacter::SetFlying()
+//{
+//	MovementComponent = Cast<UCustomCharacterMovementComponent>(GetCharacterMovement());
+//
+//	if (bWantsToFly != (MovementComponent->MovementMode == EMovementMode::MOVE_Flying))
+//	{
+//		if (bWantsToFly)
+//		{
+//			bIsFlying = true;
+//			MovementComponent->SetMovementMode(EMovementMode::MOVE_Flying);
+//			MovementFlyVelocity = MovementComponent->Velocity;
+//			MovementComponent->Velocity = { 0, 0, 0 };
+//		}
+//		else
+//		{
+//			bIsFlying = false;
+//			MovementComponent->SetMovementMode(EMovementMode::MOVE_Falling);
+//			MovementComponent->AddImpulse(MovementFlyVelocity * 1.5f, true);
+//		}
+//	}
+//}
+//
+//void ASoozeCharacter::UpdateFlyRotation(FVector2D MoveInput)
+//{
+//	GlideRotCurrent.Roll = FMath::FInterpTo(GlideRotCurrent.Roll, MoveInput.X * GlideRotMaxRoll, Delta, 10);
+//
+//	GlideRotCurrent.Pitch = FMath::FInterpTo(GlideRotCurrent.Pitch, FMath::Clamp(GlideRotCurrent.Pitch + (MoveInput.Y * GlideRotAccel.Pitch * Delta), 
+//		GlideRotMaxPitch * -1.0f, GlideRotMaxPitch), Delta, 100);
+//
+//	GlideRotCurrent.Yaw = FMath::FInterpTo(GlideRotCurrent.Yaw, GlideRotCurrent.Yaw + (MoveInput.X * GlideRotAccel.Yaw * Delta), 100,Delta);
+//
+//	SetActorRotation(GlideRotCurrent.Add(0.0, -90.0, 0.0));
+//
+//	
+//
+//	MoveFly();
+//}
+//
+//void ASoozeCharacter::UpdateFlySpeed()
+//{
+//	GlideSpeedCurrent = FMath::Clamp(GlideSpeedCurrent + (GlideSpeedAccel * Delta * ((GlideRotCurrent.Pitch * -1) / 90)), 0.0, GlideGravityMax);
+//}
+//
+//void ASoozeCharacter::MoveFly()
+//{
+//	MovementFlyVelocity = FMath::Lerp(FVector(MovementFlyVelocity.X, MovementFlyVelocity.Y, FMath::Max(MovementFlyVelocity.Z - (GlideGravityAccel * Delta), GlideGravityMax * -1)), 
+//		GlideRotCurrent.Vector() * GlideSpeedCurrent, GlideSpeedCurrent / GlideGravityMax);
+//	
+//	AddActorWorldOffset(MovementFlyVelocity * Delta, true);
+//}
+//
+//void ASoozeCharacter::TryFlying()
+//{
+//	if (bIsFlying)
+//	{
+//		bWantsToFly = false;
+//		SetFlying();
+//	}
+//	else
+//	{
+//		bWantsToFly = true;
+//		SetFlying();
+//	}
+//}
