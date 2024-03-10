@@ -163,6 +163,22 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_GlideMaxWalkSpeed;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DiveDecendingRate_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_DiveDecendingRate;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DiveSpeedIncrease_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_DiveSpeedIncrease;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DiveAccelerationIncrease_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_DiveAccelerationIncrease;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DiveMaxSpeed_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_DiveMaxSpeed;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MovementComponent_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MovementComponent;
@@ -376,6 +392,38 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideMaxWalkSpeed = { "GlideMaxWalkSpeed", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, GlideMaxWalkSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideMaxWalkSpeed_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideMaxWalkSpeed_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveDecendingRate_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "SoozeCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveDecendingRate = { "DiveDecendingRate", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, DiveDecendingRate), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveDecendingRate_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveDecendingRate_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveSpeedIncrease_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "SoozeCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveSpeedIncrease = { "DiveSpeedIncrease", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, DiveSpeedIncrease), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveSpeedIncrease_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveSpeedIncrease_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveAccelerationIncrease_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "SoozeCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveAccelerationIncrease = { "DiveAccelerationIncrease", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, DiveAccelerationIncrease), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveAccelerationIncrease_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveAccelerationIncrease_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveMaxSpeed_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "SoozeCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveMaxSpeed = { "DiveMaxSpeed", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, DiveMaxSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveMaxSpeed_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveMaxSpeed_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MovementComponent_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "SoozeCharacter.h" },
@@ -413,6 +461,10 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideBrakingDecelerationFalling,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideMaxAcceleration,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_GlideMaxWalkSpeed,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveDecendingRate,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveSpeedIncrease,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveAccelerationIncrease,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DiveMaxSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MovementComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_IsGliding,
 	};
@@ -454,9 +506,9 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASoozeCharacter, ASoozeCharacter::StaticClass, TEXT("ASoozeCharacter"), &Z_Registration_Info_UClass_ASoozeCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASoozeCharacter), 1464153032U) },
+		{ Z_Construct_UClass_ASoozeCharacter, ASoozeCharacter::StaticClass, TEXT("ASoozeCharacter"), &Z_Registration_Info_UClass_ASoozeCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASoozeCharacter), 203281779U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_3260294569(TEXT("/Script/Sooze"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_507891037(TEXT("/Script/Sooze"),
 		Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

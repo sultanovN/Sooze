@@ -288,19 +288,26 @@ void ASoozeCharacter::DescentPlayer()
 		if (GetCharacterMovement()->GravityScale < 0.0f) { Gravity = GetCharacterMovement()->GravityScale; }
 		GetCharacterMovement()->Velocity.Z = DescendingRate * -1.f * Gravity;
 		UE_LOG(LogTemp, Warning, TEXT("Descent"));
+		FollowCamera->SetFieldOfView(FMath::FInterpTo(90.f, 110.f, Delta, 3.0f));
+
+
 		if (bIsDiving)
 		{
-			DescendingRate = 1000.0f;
-			if (GetCharacterMovement()->MaxWalkSpeed <= 2600.f)
+			FollowCamera->SetFieldOfView(FMath::FInterpTo(FollowCamera->FieldOfView, 110.f, Delta, 3.0f));
+
+			DescendingRate = DiveDecendingRate;
+			if (GetCharacterMovement()->MaxWalkSpeed < DiveMaxSpeed)
 			{
-				GetCharacterMovement()->MaxWalkSpeed += 20.0f;
-				GetCharacterMovement()->MaxAcceleration += 40.0f;
+				GetCharacterMovement()->MaxWalkSpeed += DiveSpeedIncrease;
+				GetCharacterMovement()->MaxAcceleration += DiveAccelerationIncrease;
 			}
 			
 		}
 		else
 		{
 			DescendingRate = 300.f;
+			FollowCamera->SetFieldOfView(FMath::FInterpTo(FollowCamera->FieldOfView, 130.f, Delta, 3.0f));
+
 		}
 	}
 }
@@ -311,8 +318,12 @@ void ASoozeCharacter::GlideDive()
 	{
 		bIsDiving = true;
 		UE_LOG(LogTemp, Warning, TEXT("Dive"));
-		
 	}
+	else
+	{
+		bIsDiving = false;
+	}
+
 }
 
 void ASoozeCharacter::ApplyOriginalSettings()
@@ -325,6 +336,7 @@ void ASoozeCharacter::ApplyOriginalSettings()
 	 GetCharacterMovement()->MaxWalkSpeed = OriginalWalkingSpeed;
 	 GetCharacterMovement()->bUseControllerDesiredRotation = OriginalDesiredRotation;
 	 GetCharacterMovement()->RotationRate = FRotator(0.f, 500.f, 0.f);
+
 	 UE_LOG(LogTemp, Warning, TEXT("apply set"));
 }
 

@@ -76,10 +76,22 @@ class ASoozeCharacter : public ACharacter
 	float GlideBrakingDecelerationFalling = 350.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	float GlideMaxAcceleration = 1024;
+	float GlideMaxAcceleration = 1024.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	float GlideMaxWalkSpeed = 1000;
+	float GlideMaxWalkSpeed = 1000.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float DiveDecendingRate = 1500.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float DiveSpeedIncrease = 10.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float DiveAccelerationIncrease = 25.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float DiveMaxSpeed = 2400.f;
 
 public:
 	ASoozeCharacter(const FObjectInitializer& ObjectInitializer);
