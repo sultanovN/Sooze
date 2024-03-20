@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeSooze_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x75DF6C90,
+				0x52611F35,
 				0x9BF27D6F,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeSooze_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_Sooze.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Sooze(Z_Construct_UPackage__Script_Sooze, TEXT("/Script/Sooze"), Z_Registration_Info_UPackage__Script_Sooze, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x75DF6C90, 0x9BF27D6F));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Sooze(Z_Construct_UPackage__Script_Sooze, TEXT("/Script/Sooze"), Z_Registration_Info_UPackage__Script_Sooze, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x52611F35, 0x9BF27D6F));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

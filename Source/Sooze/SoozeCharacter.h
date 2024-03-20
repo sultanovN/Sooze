@@ -76,22 +76,34 @@ class ASoozeCharacter : public ACharacter
 	float GlideBrakingDecelerationFalling = 350.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	float GlideMaxAcceleration = 1024.f;
+	float GlideAcceleration = 1024.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	float GlideMaxWalkSpeed = 1000.f;
+	float GlideWalkSpeed = 1000.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	float DiveDecendingRate = 1500.f;
+	float GlideMaxAcceleration = 1824.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float GlideMaxWalkSpeed = 1900.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float DiveDecendingRate = 1700.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	float DiveSpeedIncrease = 10.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	float DiveAccelerationIncrease = 25.f;
+	float DiveAccelerationIncrease = 15.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	float DiveMaxSpeed = 2400.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float GlideSpeedDecreaseFactor = 1.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	float DesiredCameraFOV = 90.f;
 
 public:
 	ASoozeCharacter(const FObjectInitializer& ObjectInitializer);
@@ -113,6 +125,7 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
 			
 	void Glide();
 	void StartGliding();
@@ -136,6 +149,8 @@ protected:
 	bool IsGliding = false;
 
 	bool bIsDiving = false;
+
+	bool bIsTurning = false;
 
 	/*void UpdateFlyRotation(FVector2D MoveInput);
 

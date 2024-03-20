@@ -86,6 +86,8 @@ void ASoozeCharacter::Tick(float DeltaSeconds)
 {
 	Delta = DeltaSeconds;
 	DescentPlayer();
+	FollowCamera->SetFieldOfView(FMath::FInterpTo(FollowCamera->FieldOfView, DesiredCameraFOV, Delta, 3.0f));//InterpSpeed higher faster
+
 }
 
 void ASoozeCharacter::Landed(const FHitResult& Hit)
@@ -114,6 +116,7 @@ void ASoozeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 		
 		// Jumping
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
+
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
 
 		// Moving
@@ -127,6 +130,7 @@ void ASoozeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 		//Dive
 		EnhancedInputComponent->BindAction(DiveAction, ETriggerEvent::None, this, &ASoozeCharacter::GlideDive);
+
 
 		//EnhancedInputComponent->BindAction(GlideAction, ETriggerEvent::Started, this, &ASoozeCharacter::TryFlying);
 
@@ -153,6 +157,12 @@ void ASoozeCharacter::Move(const FInputActionValue& Value)
 
 	if (Controller != nullptr)
 	{
+		if (MovementVector.X != 0.0f && MovementVector.Y == 0.0f)
+		{
+			GetCharacterMovement()->MaxWalkSpeed = FMath::FInterpTo(GetCharacterMovement()->MaxWalkSpeed, GlideWalkSpeed, Delta, 3.0f);
+			UE_LOG(LogTemp, Warning, TEXT("TURNING"));
+		}
+
 		// find out which way is forward
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
@@ -227,8 +237,8 @@ void ASoozeCharacter::StartGliding()
 		if (InField) { GetCharacterMovement()->GravityScale = -1.0f; }
 		GetCharacterMovement()->AirControl = 0.9;
 		GetCharacterMovement()->BrakingDecelerationFalling = 350.f;
-		GetCharacterMovement()->MaxAcceleration = 1024;
-		GetCharacterMovement()->MaxWalkSpeed = 1000;
+		GetCharacterMovement()->MaxAcceleration = GlideAcceleration;
+		GetCharacterMovement()->MaxWalkSpeed = GlideWalkSpeed;
 		GetCharacterMovement()->bUseControllerDesiredRotation = true;
 	}
 }
@@ -238,6 +248,7 @@ void ASoozeCharacter::StopGliding()
 	ApplyOriginalSettings();
 	IsGliding = false;
 	GliderMesh->SetVisibility(false);
+	DesiredCameraFOV = 90.f;
 	UE_LOG(LogTemp, Warning, TEXT("Stop Glide"));
 }
 
@@ -288,26 +299,39 @@ void ASoozeCharacter::DescentPlayer()
 		if (GetCharacterMovement()->GravityScale < 0.0f) { Gravity = GetCharacterMovement()->GravityScale; }
 		GetCharacterMovement()->Velocity.Z = DescendingRate * -1.f * Gravity;
 		UE_LOG(LogTemp, Warning, TEXT("Descent"));
-		FollowCamera->SetFieldOfView(FMath::FInterpTo(90.f, 110.f, Delta, 3.0f));
+		UE_LOG(LogTemp, Warning, TEXT("Glide Speed: %f"), GetCharacterMovement()->MaxWalkSpeed);
+		UE_LOG(LogTemp, Warning, TEXT("Glide Speed: %d"), GetCharacterMovement()->Velocity.Size());
+		DesiredCameraFOV = 110.f;
 
 
 		if (bIsDiving)
 		{
-			FollowCamera->SetFieldOfView(FMath::FInterpTo(FollowCamera->FieldOfView, 110.f, Delta, 3.0f));
+			//FollowCamera->SetFieldOfView(FMath::FInterpTo(FollowCamera->FieldOfView, 110.f, Delta, 10.0f));
 
 			DescendingRate = DiveDecendingRate;
 			if (GetCharacterMovement()->MaxWalkSpeed < DiveMaxSpeed)
 			{
-				GetCharacterMovement()->MaxWalkSpeed += DiveSpeedIncrease;
-				GetCharacterMovement()->MaxAcceleration += DiveAccelerationIncrease;
+				GetCharacterMovement()->MaxWalkSpeed = FMath::FInterpTo(GetCharacterMovement()->MaxWalkSpeed, DiveMaxSpeed, Delta,3.0f);
+				//GetCharacterMovement()->MaxAcceleration = 2000.f;
 			}
-			
+			DesiredCameraFOV = 70.f;
 		}
 		else
 		{
-			DescendingRate = 300.f;
-			FollowCamera->SetFieldOfView(FMath::FInterpTo(FollowCamera->FieldOfView, 130.f, Delta, 3.0f));
 
+			DescendingRate = 300.f;
+			if (GlideMaxWalkSpeed < GetCharacterMovement()->MaxWalkSpeed || GlideMaxAcceleration < GetCharacterMovement()->MaxAcceleration)
+			{
+				GetCharacterMovement()->MaxWalkSpeed = FMath::FInterpTo(GetCharacterMovement()->MaxWalkSpeed, GlideMaxWalkSpeed, Delta, 0.7f);
+				//GetCharacterMovement()->MaxAcceleration -= DiveAccelerationIncrease * 0.2f * GlideSpeedDecreaseFactor;
+			}
+			/*else 
+			{
+				GetCharacterMovement()->MaxWalkSpeed -= DiveSpeedIncrease * GlideSpeedDecreaseFactor;
+				GetCharacterMovement()->MaxAcceleration -= DiveAccelerationIncrease * GlideSpeedDecreaseFactor;
+			}*/
+			
+			//FollowCamera->SetFieldOfView(FMath::FInterpTo(FollowCamera->FieldOfView, 130.f, Delta, 10.0f));
 		}
 	}
 }
