@@ -228,14 +228,8 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_CameraBoom_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Camera" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Camera boom positioning the camera behind the character */" },
-#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "SoozeCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Camera boom positioning the camera behind the character" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_CameraBoom_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_CameraBoom_MetaData) };
@@ -252,14 +246,8 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_FollowCamera_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Camera" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Follow camera */" },
-#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "SoozeCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Follow camera" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_FollowCamera = { "FollowCamera", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, FollowCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_FollowCamera_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_FollowCamera_MetaData) };
@@ -267,13 +255,7 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DefaultMappingContext_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** MappingContext */" },
-#endif
 		{ "ModuleRelativePath", "SoozeCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "MappingContext" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DefaultMappingContext = { "DefaultMappingContext", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, DefaultMappingContext), Z_Construct_UClass_UInputMappingContext_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DefaultMappingContext_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_DefaultMappingContext_MetaData) };
@@ -281,13 +263,7 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_JumpAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Jump Input Action */" },
-#endif
 		{ "ModuleRelativePath", "SoozeCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Jump Input Action" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_JumpAction = { "JumpAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, JumpAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_JumpAction_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_JumpAction_MetaData) };
@@ -295,13 +271,7 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MoveAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Move Input Action */" },
-#endif
 		{ "ModuleRelativePath", "SoozeCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Move Input Action" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MoveAction = { "MoveAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, MoveAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MoveAction_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_MoveAction_MetaData) };
@@ -309,13 +279,7 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_LookAction_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Input" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Look Input Action */" },
-#endif
 		{ "ModuleRelativePath", "SoozeCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Look Input Action" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASoozeCharacter, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_LookAction_MetaData), Z_Construct_UClass_ASoozeCharacter_Statics::NewProp_LookAction_MetaData) };
@@ -558,9 +522,9 @@ void EmptyLinkFunctionForGeneratedCodeSoozeCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASoozeCharacter, ASoozeCharacter::StaticClass, TEXT("ASoozeCharacter"), &Z_Registration_Info_UClass_ASoozeCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASoozeCharacter), 1492841768U) },
+		{ Z_Construct_UClass_ASoozeCharacter, ASoozeCharacter::StaticClass, TEXT("ASoozeCharacter"), &Z_Registration_Info_UClass_ASoozeCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASoozeCharacter), 1933138504U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_3460374956(TEXT("/Script/Sooze"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_1563402225(TEXT("/Script/Sooze"),
 		Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE_Projects_Sooze_Source_Sooze_SoozeCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

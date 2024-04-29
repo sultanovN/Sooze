@@ -12,11 +12,35 @@ void UCustomCharacterMovementComponent::BeginPlay()
 	ClimbQueryParams.AddIgnoredActor(GetOwner());
 }
 
-void UCustomCharacterMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+void UCustomCharacterMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
+	FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	SweepAndStoreWallHits();
+}
+
+void UCustomCharacterMovementComponent::SweepAndStoreWallHits()
+{
+	const FCollisionShape CollisionShape = FCollisionShape::MakeCapsule(CollisionCapsuleRadius, CollisionCapsuleHalfHeight);
+
+	const FVector StartOffset = UpdatedComponent->GetForwardVector() * 20;
+
+	const FVector Start = UpdatedComponent->GetComponentLocation() + StartOffset;
+	const FVector End = Start + UpdatedComponent->GetForwardVector();
+
+	TArray<FHitResult> Hits;
+	const bool HitWall = GetWorld()->SweepMultiByChannel(Hits, Start, End, FQuat::Identity, 
+		ECC_WorldStatic, CollisionShape, ClimbQueryParams);
+
+	if (HitWall)
+	{
+		CurrentWallHits = Hits;
+	}
+	else
+	{
+		CurrentWallHits.Reset();
+	}
 }
 
 void UCustomCharacterMovementComponent::OnMovementUpdated(float DeltaSeconds, const FVector& OldLocation, const FVector& OldVelocity)
@@ -65,15 +89,7 @@ void UCustomCharacterMovementComponent::OnMovementModeChanged(EMovementMode Prev
 	Super::OnMovementModeChanged(PreviousMovementMode, PreviousCustomMode);
 }
 
-float UCustomCharacterMovementComponent::GetMaxSpeed() const
-{
-	return IsClimbing() ? MaxClimbingSpeed : Super::GetMaxSpeed();
-}
 
-float UCustomCharacterMovementComponent::GetMaxAcceleration() const
-{
-	return IsClimbing() ? MaxClimbingAcceleration : Super::GetMaxAcceleration();
-}
 
 void UCustomCharacterMovementComponent::PhysClimbing(float deltaTime, int32 Iterations)
 {
@@ -83,7 +99,6 @@ void UCustomCharacterMovementComponent::PhysClimbing(float deltaTime, int32 Iter
 	}
 
 	ComputeSurfaceInfo();
-
 	if (ShouldStopClimbing() || ClimbDownToFloor())
 	{
 		StopClimbing(deltaTime, Iterations);
@@ -91,46 +106,22 @@ void UCustomCharacterMovementComponent::PhysClimbing(float deltaTime, int32 Iter
 	}
 
 	ComputeClimbingVelocity(deltaTime);
-
 	const FVector OldLocation = UpdatedComponent->GetComponentLocation();
-
 	MoveAlongClimbingSurface(deltaTime);
 
 	if (!HasAnimRootMotion() && !CurrentRootMotion.HasOverrideVelocity())
 	{
 		Velocity = (UpdatedComponent->GetComponentLocation() - OldLocation) / deltaTime;
 	}
-
 	SnapToClimbingSurface(deltaTime);
 }
 
-void UCustomCharacterMovementComponent::SweepAndStoreWallHits()
-{
-	const FCollisionShape CollisionShape = FCollisionShape::MakeCapsule(CollisionCapsuleRadius, CollisionCapsuleHalfHeight);
 
-	const FVector StartOffset = UpdatedComponent->GetForwardVector() * 20;
-
-	const FVector Start = UpdatedComponent->GetComponentLocation() + StartOffset;
-	const FVector End = Start+ UpdatedComponent->GetForwardVector();
-
-	TArray<FHitResult> Hits;
-	const bool HitWall = GetWorld()->SweepMultiByChannel(Hits, Start, End, FQuat::Identity, ECC_WorldStatic, CollisionShape, ClimbQueryParams);
-
-	if (HitWall)
-	{
-		CurrentWallHits = Hits;
-	}
-	else
-	{
-		CurrentWallHits.Reset();
-	}
-}
 
 void UCustomCharacterMovementComponent::ComputeSurfaceInfo()
 {
 	CurrentClimbingNormal = FVector::ZeroVector;
 	CurrentClimbingPosition = FVector::ZeroVector;
-
 	const FVector Start = UpdatedComponent->GetComponentLocation();
 	const FCollisionShape CollisionSphere = FCollisionShape::MakeSphere(6);
 
@@ -144,12 +135,12 @@ void UCustomCharacterMovementComponent::ComputeSurfaceInfo()
 		const FVector End = Start + (WallHit.ImpactPoint - Start).GetSafeNormal() * 120;
 
 		FHitResult AssistHit;
-		GetWorld()->SweepSingleByChannel(AssistHit, Start, End, FQuat::Identity, ECC_WorldStatic, CollisionSphere, ClimbQueryParams);
+		GetWorld()->SweepSingleByChannel(AssistHit, Start, End, FQuat::Identity, 
+			ECC_WorldStatic, CollisionSphere, ClimbQueryParams);
 
 		CurrentClimbingPosition += AssistHit.ImpactPoint;
 		CurrentClimbingNormal += AssistHit.Normal;
 	}
-
 	CurrentClimbingPosition /= CurrentWallHits.Num();
 	CurrentClimbingNormal = CurrentClimbingNormal.GetSafeNormal();
 }
@@ -157,21 +148,28 @@ void UCustomCharacterMovementComponent::ComputeSurfaceInfo()
 void UCustomCharacterMovementComponent::ComputeClimbingVelocity(float deltaTime)
 {
 	RestorePreAdditiveRootMotionVelocity();
-
 	if (!HasAnimRootMotion() && !CurrentRootMotion.HasOverrideVelocity())
 	{
 		constexpr float Friction = 0.0f;
 		constexpr bool bFluid = false;
 		CalcVelocity(deltaTime, Friction, bFluid, BrakingDecelerationClimbing);
 	}
-
 	ApplyRootMotionToVelocity(deltaTime);
+}
+
+float UCustomCharacterMovementComponent::GetMaxSpeed() const
+{
+	return IsClimbing() ? MaxClimbingSpeed : Super::GetMaxSpeed();
+}
+
+float UCustomCharacterMovementComponent::GetMaxAcceleration() const
+{
+	return IsClimbing() ? MaxClimbingAcceleration : Super::GetMaxAcceleration();
 }
 
 bool UCustomCharacterMovementComponent::ShouldStopClimbing()
 {
 	const bool bIsOnCeiling = FVector::Parallel(CurrentClimbingNormal, FVector::UpVector);
-
 	return !bWantsToClimb || CurrentClimbingNormal.IsZero() || bIsOnCeiling;
 }
 
@@ -185,9 +183,7 @@ void UCustomCharacterMovementComponent::StopClimbing(float deltaTime, int32 Iter
 void UCustomCharacterMovementComponent::MoveAlongClimbingSurface(float deltaTime)
 {
 	const FVector Adjusted = Velocity * deltaTime;
-
 	FHitResult Hit(1.f);
-
 	SafeMoveUpdatedComponent(Adjusted, GetClimbingRotation(deltaTime), true, Hit);
 
 	if (Hit.Time < 1.f)
@@ -195,6 +191,14 @@ void UCustomCharacterMovementComponent::MoveAlongClimbingSurface(float deltaTime
 		HandleImpact(Hit, deltaTime, Adjusted);
 		SlideAlongSurface(Adjusted, (1.f - Hit.Time), Hit.Normal, Hit, true);
 	}
+}
+
+FQuat UCustomCharacterMovementComponent::GetClimbingRotation(float deltaTime) const
+{
+	const FQuat Current = UpdatedComponent->GetComponentQuat();
+	const FQuat Target = FRotationMatrix::MakeFromX(-CurrentClimbingNormal).ToQuat();
+
+	return FMath::QInterpTo(Current, Target, deltaTime, ClimbingRotationSpeed);
 }
 
 void UCustomCharacterMovementComponent::SnapToClimbingSurface(float deltaTime) const
@@ -219,13 +223,18 @@ bool UCustomCharacterMovementComponent::ClimbDownToFloor() const
 	}
 
 	const bool bOnWalkableFloor = FloorHit.Normal.Z > GetWalkableFloorZ();
-
 	const float DownSpeed = FVector::DotProduct(Velocity, -FloorHit.Normal);
 	const bool bIsMovingTowardsFloor = DownSpeed >= MaxClimbingSpeed / 3 && bOnWalkableFloor;
-
 	const bool bIsClimbingFloor = CurrentClimbingNormal.Z > GetWalkableFloorZ();
 
 	return bIsMovingTowardsFloor || (bIsClimbingFloor && bOnWalkableFloor);
+}
+
+bool UCustomCharacterMovementComponent::CheckFloor(FHitResult& FloorHit) const
+{
+	const FVector Start = UpdatedComponent->GetComponentLocation();
+	const FVector End = Start + FVector::DownVector * FloorCheckDistance;
+	return GetWorld()->LineTraceSingleByChannel(FloorHit, Start, End, ECC_WorldStatic, ClimbQueryParams);
 }
 
 bool UCustomCharacterMovementComponent::CanStartClimbing()
@@ -245,7 +254,8 @@ bool UCustomCharacterMovementComponent::CanStartClimbing()
 
 		const bool bIsCeiling = FMath::IsNearlyZero(VerticalDot);
 
-		if (HorizontalDegrees <= MinHorizontalDegreesToStartClimbing && !bIsCeiling && IsFacingSurface(VerticalDot))
+		if (HorizontalDegrees <= MinHorizontalDegreesToStartClimbing && !bIsCeiling && 
+			IsFacingSurface(VerticalDot))
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Can climb!"));
 			return true;
@@ -261,34 +271,25 @@ bool UCustomCharacterMovementComponent::EyeHeightTrace(const float TraceDistance
 {
 	FHitResult UpperEdgeHit;
 
-	const FVector Start = UpdatedComponent->GetComponentLocation() + (UpdatedComponent->GetUpVector() * GetCharacterOwner()->BaseEyeHeight);
+	const FVector Start = UpdatedComponent->GetComponentLocation() + (UpdatedComponent->GetUpVector() 
+		* GetCharacterOwner()->BaseEyeHeight);
 	const FVector End = Start + (UpdatedComponent->GetForwardVector() * TraceDistance);
 
-	return GetWorld()->LineTraceSingleByChannel(UpperEdgeHit, Start, End, ECC_WorldStatic, ClimbQueryParams);
+	return GetWorld()->LineTraceSingleByChannel(UpperEdgeHit, Start, End, ECC_WorldStatic, 
+		ClimbQueryParams);
 }
 
 bool UCustomCharacterMovementComponent::IsFacingSurface(const float SurfaceVerticalDot) const
 {
 	constexpr float BaseLength = 80;
-	const float SteepnessMultiplier = 1 + (1 - SurfaceVerticalDot) * 5; //Steepness in SurfaceVerticalDot
+	const float SteepnessMultiplier = 1 + (1 - SurfaceVerticalDot) * 5;                           //Steepness in SurfaceVerticalDot
 
 	return EyeHeightTrace(BaseLength* SteepnessMultiplier);
 }
 
-bool UCustomCharacterMovementComponent::CheckFloor(FHitResult& FloorHit) const
-{
-	const FVector Start = UpdatedComponent->GetComponentLocation();
-	const FVector End = Start + FVector::DownVector * FloorCheckDistance;
-	return GetWorld()->LineTraceSingleByChannel(FloorHit, Start, End, ECC_WorldStatic, ClimbQueryParams);
-}
 
-FQuat UCustomCharacterMovementComponent::GetClimbingRotation(float deltaTime) const
-{
-	const FQuat Current = UpdatedComponent->GetComponentQuat();
-	const FQuat Target = FRotationMatrix::MakeFromX(-CurrentClimbingNormal).ToQuat();
 
-	return FMath::QInterpTo(Current, Target, deltaTime, ClimbingRotationSpeed);
-}
+
 
 UCustomCharacterMovementComponent::UCustomCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer)

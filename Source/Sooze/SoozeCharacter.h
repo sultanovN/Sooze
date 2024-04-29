@@ -21,30 +21,24 @@ class ASoozeCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* CameraBoom;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* GliderMesh;
 
-	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
 	
-	/** MappingContext */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputMappingContext* DefaultMappingContext;
 
-	/** Jump Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* JumpAction;
 
-	/** Move Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* MoveAction;
 
-	/** Look Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
@@ -152,16 +146,6 @@ protected:
 
 	bool bIsTurning = false;
 
-	/*void UpdateFlyRotation(FVector2D MoveInput);
-
-	void SetFlying();
-
-	void UpdateFlySpeed();
-
-	void MoveFly();
-
-	void TryFlying();*/
-
 	FVector CurrentVelocity;
 
 	bool InField = false;
@@ -176,26 +160,9 @@ protected:
 
 	float Delta;
 
-	/*FVector MovementFlyVelocity;
-
-	bool bWantsToFly = false;
-	bool bIsFlying = false;
-
-	FRotator GlideRotCurrent;
-	FRotator GlideRotAccel;
-	float GlideRotMaxRoll;
-	float GlideRotMaxPitch;
-	float GlideSpeedAccel;
-	float GlideSpeedCurrent;
-	float GlideGravityAccel;
-	float GlideGravityMax = 1.0f;*/
-
-
 protected:
-	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
-	// To add mapping context
 	virtual void BeginPlay();
 
 	virtual void Tick(float DeltaSeconds)override;
@@ -203,14 +170,13 @@ protected:
 	virtual void Landed(const FHitResult& Hit) override;
 
 public:
-	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 
 	UFUNCTION(BlueprintPure)
 	FORCEINLINE UCustomCharacterMovementComponent* GetCustomCharacterMovement() const { return MovementComponent; }
 
-	void SetGravity(float Scale);
+	void SetGravity(float Gravity);
+
 };
 

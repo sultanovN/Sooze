@@ -70,10 +70,6 @@
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/OpenImageDenoise.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-AIGraph.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3378,10 +3374,6 @@
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/tbb12.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/2D/Paper2D/Binaries/Win64/UnrealEditor-Paper2D.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3678,18 +3670,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Developer/PerforceSourceControl/Binaries/Win64/UnrealEditor-PerforceSourceControl.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/PerforceSourceControl/Binaries/Win64/UnrealEditor-PerforceSourceControl.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/PerforceSourceControl/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Developer/PixWinPlugin/Binaries/Win64/UnrealEditor-PixWinPlugin.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3699,18 +3679,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Developer/PixWinPlugin/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/PlasticSourceControl/Binaries/Win64/UnrealEditor-PlasticSourceControl.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/PlasticSourceControl/Binaries/Win64/UnrealEditor-PlasticSourceControl.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/PlasticSourceControl/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -3738,18 +3706,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Developer/RenderDocPlugin/Binaries/Win64/UnrealEditor-RenderDocPlugin.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/RenderDocPlugin/Binaries/Win64/UnrealEditor-RenderDocPlugin.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/RenderDocPlugin/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Developer/RiderSourceCodeAccess/Binaries/Win64/UnrealEditor-RiderSourceCodeAccess.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3759,18 +3715,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Developer/RiderSourceCodeAccess/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/SubversionSourceControl/Binaries/Win64/UnrealEditor-SubversionSourceControl.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/SubversionSourceControl/Binaries/Win64/UnrealEditor-SubversionSourceControl.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/SubversionSourceControl/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -3855,18 +3799,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Editor/BlueprintHeaderView/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Editor/ChangelistReview/Binaries/Win64/UnrealEditor-ChangelistReview.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Editor/ChangelistReview/Binaries/Win64/UnrealEditor-ChangelistReview.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Editor/ChangelistReview/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -4142,18 +4074,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Editor/SpeedTreeImporter/Binaries/Win64/UnrealEditor-SpeedTreeImporter.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Editor/SpeedTreeImporter/Binaries/Win64/UnrealEditor-SpeedTreeImporter.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Editor/SpeedTreeImporter/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Editor/UVEditor/Binaries/Win64/UnrealEditor-UVEditor.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -4318,98 +4238,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCaching/Binaries/Win64/UnrealEditor-ChaosCaching.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCaching/Binaries/Win64/UnrealEditor-ChaosCaching.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCaching/Binaries/Win64/UnrealEditor-ChaosCachingEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCaching/Binaries/Win64/UnrealEditor-ChaosCachingEditor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCaching/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosClothEditor/Binaries/Win64/UnrealEditor-ChaosClothEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosClothEditor/Binaries/Win64/UnrealEditor-ChaosClothEditor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosClothEditor/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCloth/Binaries/Win64/UnrealEditor-ChaosCloth.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCloth/Binaries/Win64/UnrealEditor-ChaosCloth.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCloth/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosEditor/Binaries/Win64/UnrealEditor-FractureEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosEditor/Binaries/Win64/UnrealEditor-FractureEditor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosEditor/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosNiagara/Binaries/Win64/UnrealEditor-ChaosNiagara.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosNiagara/Binaries/Win64/UnrealEditor-ChaosNiagara.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosNiagara/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosSolverPlugin/Binaries/Win64/UnrealEditor-ChaosSolverEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosSolverPlugin/Binaries/Win64/UnrealEditor-ChaosSolverEditor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosSolverPlugin/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosUserDataPT/Binaries/Win64/UnrealEditor-ChaosUserDataPT.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosUserDataPT/Binaries/Win64/UnrealEditor-ChaosUserDataPT.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosUserDataPT/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/CharacterAI/Binaries/Win64/UnrealEditor-CharacterAI.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -4450,18 +4278,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/Fracture/Binaries/Win64/UnrealEditor-FractureEngine.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/Fracture/Binaries/Win64/UnrealEditor-FractureEngine.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/Fracture/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/FullBodyIK/Binaries/Win64/UnrealEditor-FullBodyIK.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -4479,42 +4295,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/FullBodyIK/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/Binaries/Win64/UnrealEditor-GeometryCollectionEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/Binaries/Win64/UnrealEditor-GeometryCollectionEditor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/Binaries/Win64/UnrealEditor-GeometryCollectionNodes.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/Binaries/Win64/UnrealEditor-GeometryCollectionNodes.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/Binaries/Win64/UnrealEditor-GeometryCollectionSequencer.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/Binaries/Win64/UnrealEditor-GeometryCollectionSequencer.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/Binaries/Win64/UnrealEditor-GeometryCollectionTracks.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/Binaries/Win64/UnrealEditor-GeometryCollectionTracks.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -4619,30 +4399,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/MeshModelingToolsetExp/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/OpenImageDenoise/Binaries/Win64/UnrealEditor-OpenImageDenoise.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/OpenImageDenoise/Binaries/Win64/UnrealEditor-OpenImageDenoise.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/OpenImageDenoise/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/Binaries/Win64/UnrealEditor-PlanarCut.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/Binaries/Win64/UnrealEditor-PlanarCut.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -4854,26 +4610,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Importers/AlembicImporter/Binaries/Win64/UnrealEditor-AlembicImporter.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Importers/AlembicImporter/Binaries/Win64/UnrealEditor-AlembicImporter.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Importers/AlembicImporter/Binaries/Win64/UnrealEditor-AlembicLibrary.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Importers/AlembicImporter/Binaries/Win64/UnrealEditor-AlembicLibrary.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Importers/AlembicImporter/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Interchange/Editor/Binaries/Win64/UnrealEditor-InterchangeEditor.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -4986,23 +4722,23 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Media/AvfMedia/Binaries/Win64/UnrealEditor-AvfMediaEditor.dll",
+			"Path": "$(EngineDir)/Plugins/Marketplace/UINav3Plugin/Binaries/Win64/UnrealEditor-UINavigation.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Media/AvfMedia/Binaries/Win64/UnrealEditor-AvfMediaEditor.pdb",
+			"Path": "$(EngineDir)/Plugins/Marketplace/UINav3Plugin/Binaries/Win64/UnrealEditor-UINavigation.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Media/AvfMedia/Binaries/Win64/UnrealEditor-AvfMediaFactory.dll",
+			"Path": "$(EngineDir)/Plugins/Marketplace/UINav3Plugin/Binaries/Win64/UnrealEditor-UINavigationEditor.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Media/AvfMedia/Binaries/Win64/UnrealEditor-AvfMediaFactory.pdb",
+			"Path": "$(EngineDir)/Plugins/Marketplace/UINav3Plugin/Binaries/Win64/UnrealEditor-UINavigationEditor.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Media/AvfMedia/Binaries/Win64/UnrealEditor.modules",
+			"Path": "$(EngineDir)/Plugins/Marketplace/UINav3Plugin/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -5398,26 +5134,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AppleImageUtils/Binaries/Win64/UnrealEditor-AppleImageUtils.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AppleImageUtils/Binaries/Win64/UnrealEditor-AppleImageUtils.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AppleImageUtils/Binaries/Win64/UnrealEditor-AppleImageUtilsBlueprintSupport.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AppleImageUtils/Binaries/Win64/UnrealEditor-AppleImageUtilsBlueprintSupport.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AppleImageUtils/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ArchVisCharacter/Binaries/Win64/UnrealEditor-ArchVisCharacter.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -5790,26 +5506,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/ResonanceAudio/Binaries/Win64/UnrealEditor-ResonanceAudio.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/ResonanceAudio/Binaries/Win64/UnrealEditor-ResonanceAudio.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/ResonanceAudio/Binaries/Win64/UnrealEditor-ResonanceAudioEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/ResonanceAudio/Binaries/Win64/UnrealEditor-ResonanceAudioEditor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/ResonanceAudio/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/RigVM/Binaries/Win64/UnrealEditor-RigVM.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -5975,66 +5671,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/TraceUtilities/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-CacheTrackRecorder.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-CacheTrackRecorder.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeMovieScene.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeMovieScene.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeRecorder.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeRecorder.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeRecorderSources.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeRecorderSources.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeSequencer.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeSequencer.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeTrackRecorders.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakeTrackRecorders.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakesCore.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor-TakesCore.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -22824,1114 +22460,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/MSVCP100.DLL",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/MSVCR100.DLL",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/apr_crypto_openssl-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/apr_dbd_odbc-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/apr_dbm_db-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/apr_ldap-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/changelog.txt",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/diff.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/diff3.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/diff4.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/_tbl_simple.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/adobe-stdenc.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/adobe-symbol.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/adobe-zdingbats.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/big5.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cns11643-plane1.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cns11643-plane14.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cns11643-plane2.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp037.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp038.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp10000.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp10006.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp10007.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp10029.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp1006.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp10079.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp10081.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp1026.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp273.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp274.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp275.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp277.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp278.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp280.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp281.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp284.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp285.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp290.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp297.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp420.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp423.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp424.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp437.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp500.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp737.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp775.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp850.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp851.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp852.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp855.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp856.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp857.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp860.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp861.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp862.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp863.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp864.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp865.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp866.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp868.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp869.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp870.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp871.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp874.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp875.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp880.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp891.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp903.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp904.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp905.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp918.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp932.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp936.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp949.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/cp950.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/dec-mcs.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-at-de-a.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-at-de.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-ca-fr.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-dk-no-a.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-dk-no.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-es-a.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-es-s.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-es.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-fi-se-a.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-fi-se.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-fr.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-it.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-pt.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-uk.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ebcdic-us.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/euc-jp.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/euc-kr.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/euc-tw.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/gb12345.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/gb2312.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/gb_2312-80.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/hp-roman8.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-10646-ucs-2.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-10646-ucs-4.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-2022-cn.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-2022-jp-2.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-2022-jp.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-2022-kr.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-1.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-10.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-13.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-14.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-15.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-2.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-3.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-4.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-5.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-6.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-7.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-8.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-8859-9.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-10.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-102.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-103.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-11.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-111.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-121.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-122.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-123.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-128.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-13.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-139.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-14.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-141.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-142.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-143.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-146.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-147.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-15.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-150.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-151.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-152.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-153.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-154.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-155.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-158.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-16.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-17.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-18.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-19.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-2.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-21.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-25.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-27.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-37.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-4.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-47.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-49.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-50.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-51.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-54.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-55.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-57.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-60.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-61.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-69.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-70.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-8-1.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-8-2.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-84.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-85.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-86.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-88.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-89.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-9-1.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-9-2.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-90.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-91.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-92.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-93.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-94.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-95.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-96.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-98.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso-ir-99.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso646-dk.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/iso646-kr.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/jis_x0201.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/jis_x0208-1983.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/jis_x0212-1990.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/johab.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/koi8-r.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/koi8-ru.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/koi8-u.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ksx1001.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-ce.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-croatian.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-cyrillic.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-dingbats.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-greek.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-iceland.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-japan.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-roman.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-romania.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-thai.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-turkish.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/mac-ukraine.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/macintosh.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/osd_ebcdic_df04_1.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/osd_ebcdic_df04_15.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/shift_jis.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ucs2-internal.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/ucs4-internal.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/unicode-1-1-utf-7.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/us-ascii.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/utf-16.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/utf-8.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/windows-1250.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/windows-1251.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/windows-1252.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/windows-1253.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/windows-1254.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/windows-1255.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/windows-1256.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/windows-1257.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/iconv/windows-1258.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libapr-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libapriconv-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libaprutil-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libdb62.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libeay32.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsasl.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libserf-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_client-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_delta-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_diff-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_fs-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_ra-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_repos-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_subr-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_swig_perl-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_swig_py-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvn_wc-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/libsvnjavahl-1.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/APR-Iconv.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/APR-Util.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/APR.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/Berkeley-DB.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/CyrusSASL.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/OpenSSL.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/Serf.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/Subversion.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/Swig.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/license/ZLib.license",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslANONYMOUS.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslCRAMMD5.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslDIGESTMD5.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslLOGIN.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslNTLM.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslOTP.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslPLAIN.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslSASLDB.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslSCRAM.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/saslSRP.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/ssleay32.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svn-populate-node-origins-index.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svn.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnadmin.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnauthz-validate.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnauthz.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnbench.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svndumpfilter.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnfsfs.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnlook.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnmucc.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnraisetreeconflict.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnrdump.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnserve.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnsync.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/svnversion.exe",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/svn/Win64/zlib1.dll",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/AgentInterface.dll",
 			"Type": "NonUFS"
 		},
@@ -23941,10 +22469,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/OpenColorIO_2_2.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/OpenImageDenoise.dll",
 			"Type": "NonUFS"
 		},
 		{
@@ -23969,10 +22493,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/oo2tex_win64_2.9.9.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/tbb12.dll",
 			"Type": "NonUFS"
 		},
 		{
@@ -26792,15 +25312,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Developer/PerforceSourceControl/PerforceSourceControl.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Developer/PixWinPlugin/PixWinPlugin.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/PlasticSourceControl/PlasticSourceControl.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -26812,15 +25324,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Developer/RenderDocPlugin/RenderDocPlugin.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Developer/RiderSourceCodeAccess/RiderSourceCodeAccess.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Developer/SubversionSourceControl/SubversionSourceControl.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -26849,10 +25353,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Editor/BlueprintHeaderView/BlueprintHeaderView.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Editor/ChangelistReview/ChangelistReview.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -26936,10 +25436,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Editor/SpeedTreeImporter/SpeedTreeImporter.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Editor/UVEditor/UVEditor.uplugin",
 			"Type": "UFS"
 		},
@@ -26976,34 +25472,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCaching/ChaosCaching.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosClothEditor/ChaosClothEditor.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosCloth/ChaosCloth.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosEditor/ChaosEditor.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosNiagara/ChaosNiagara.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosSolverPlugin/ChaosSolverPlugin.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/ChaosUserDataPT/ChaosUserDataPT.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/CharacterAI/CharacterAI.uplugin",
 			"Type": "UFS"
 		},
@@ -27012,15 +25480,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Experimental/Fracture/Fracture.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Experimental/FullBodyIK/FullBodyIK.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/GeometryCollectionPlugin/GeometryCollectionPlugin.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -27037,14 +25497,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/MeshModelingToolsetExp/MeshModelingToolsetExp.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/OpenImageDenoise/OpenImageDenoise.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/PlanarCut.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -27080,10 +25532,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Importers/AlembicImporter/AlembicImporter.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Interchange/Editor/InterchangeEditor.uplugin",
 			"Type": "UFS"
 		},
@@ -27092,7 +25540,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Media/AvfMedia/AvfMedia.uplugin",
+			"Path": "$(EngineDir)/Plugins/Marketplace/UINav3Plugin/UINavigation.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -27176,10 +25624,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AppleImageUtils/AppleImageUtils.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ArchVisCharacter/ArchVisCharacter.uplugin",
 			"Type": "UFS"
 		},
@@ -27248,10 +25692,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/ResonanceAudio/ResonanceAudio.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/RigVM/RigVM.uplugin",
 			"Type": "UFS"
 		},
@@ -27289,10 +25729,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/TraceUtilities/TraceUtilities.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Takes.uplugin",
 			"Type": "UFS"
 		},
 		{

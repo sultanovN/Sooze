@@ -96,6 +96,83 @@
 				"IOS",
 				"TVOS"
 			]
+		},
+		{
+			"Name": "UINavigation",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/b9ee9669c98146cd8433a62ea7f23699"
+		},
+		{
+			"Name": "OpenImageDenoise",
+			"Enabled": false
+		},
+		{
+			"Name": "SpeedTreeImporter",
+			"Enabled": false
+		},
+		{
+			"Name": "AppleImageUtils",
+			"Enabled": false
+		},
+		{
+			"Name": "AppleMoviePlayer",
+			"Enabled": false
+		},
+		{
+			"Name": "AvfMedia",
+			"Enabled": false
+		},
+		{
+			"Name": "ChaosClothEditor",
+			"Enabled": false
+		},
+		{
+			"Name": "ChaosCloth",
+			"Enabled": false
+		},
+		{
+			"Name": "ChaosEditor",
+			"Enabled": false
+		},
+		{
+			"Name": "ChaosNiagara",
+			"Enabled": false
+		},
+		{
+			"Name": "ChaosSolverPlugin",
+			"Enabled": false
+		},
+		{
+			"Name": "ChaosUserDataPT",
+			"Enabled": false
+		},
+		{
+			"Name": "AlembicImporter",
+			"Enabled": false
+		},
+		{
+			"Name": "RenderDocPlugin",
+			"Enabled": false
+		},
+		{
+			"Name": "ResonanceAudio",
+			"Enabled": false
+		},
+		{
+			"Name": "ChangelistReview",
+			"Enabled": false
+		},
+		{
+			"Name": "SubversionSourceControl",
+			"Enabled": false
+		},
+		{
+			"Name": "PlasticSourceControl",
+			"Enabled": false
+		},
+		{
+			"Name": "PerforceSourceControl",
+			"Enabled": false
 		}
 	]
 }

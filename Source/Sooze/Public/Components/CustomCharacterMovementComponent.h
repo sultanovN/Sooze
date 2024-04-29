@@ -32,6 +32,18 @@ private:
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	void SweepAndStoreWallHits();
+	UPROPERTY(Category = "Character Movement: Climbing", EditAnywhere)
+	int CollisionCapsuleRadius = 50;
+
+	UPROPERTY(Category = "Character Movement: Climbing", EditAnywhere)
+	int CollisionCapsuleHalfHeight = 72;
+
+	TArray<FHitResult> CurrentWallHits;
+
+	FCollisionQueryParams ClimbQueryParams;
+
+
 	virtual void OnMovementUpdated(float DeltaSeconds, const FVector& OldLocation, const FVector& OldVelocity) override;
 
 	virtual void PhysCustom(float deltaTime, int32 Iterations) override;
@@ -43,7 +55,6 @@ private:
 
 	void PhysClimbing(float deltaTime, int32 Iterations);
 
-	void SweepAndStoreWallHits();
 
 	void ComputeSurfaceInfo();
 	void ComputeClimbingVelocity(float deltaTime);
@@ -56,11 +67,7 @@ private:
 
 	bool ClimbDownToFloor()const;
 
-	UPROPERTY(Category="Character Movement: Climbing", EditAnywhere)
-	int CollisionCapsuleRadius = 50;
-
-	UPROPERTY(Category = "Character Movement: Climbing", EditAnywhere)
-	int CollisionCapsuleHalfHeight = 72;
+	
 
 	UPROPERTY(Category = "Character Movement: Climbing", EditAnywhere, meta = (ClampMin = "1.0", ClampMax = "12.0"))
 	int ClimbingRotationSpeed = 6;
@@ -99,9 +106,7 @@ private:
 
 	bool CheckFloor(FHitResult& FloorHit) const;
 
-	TArray<FHitResult> CurrentWallHits;
 
-	FCollisionQueryParams ClimbQueryParams;
 
 	FVector CurrentClimbingNormal;
 	FVector CurrentClimbingPosition;
