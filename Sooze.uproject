@@ -173,6 +173,10 @@
 		{
 			"Name": "PerforceSourceControl",
 			"Enabled": false
+		},
+		{
+			"Name": "Water",
+			"Enabled": true
 		}
 	]
 }

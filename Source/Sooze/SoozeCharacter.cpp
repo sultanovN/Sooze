@@ -81,11 +81,6 @@ void ASoozeCharacter::Landed(const FHitResult& Hit)
 	}
 }
 
-void ASoozeCharacter::SetGravity(float Gravity)
-{
-	GetCharacterMovement()->GravityScale = Gravity;
-}
-
 
 void ASoozeCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -227,8 +222,11 @@ void ASoozeCharacter::RecordOriginalSettings()
 
 void ASoozeCharacter::DescentPlayer()
 {
+
 	if (CurrentVelocity.Z != DescendingRate * -1.f && IsGliding == true)
 	{
+		if (InField) { DescendingRate *= -1; }
+
 		CurrentVelocity.Z = UKismetMathLibrary::FInterpTo(CurrentVelocity.Z, DescendingRate, Delta, 3.f);
 		GetCharacterMovement()->Velocity.Z = DescendingRate * -1.f;
 		DesiredCameraFOV = 110.f;
@@ -255,10 +253,6 @@ void ASoozeCharacter::DescentPlayer()
 	}
 }
 
-
-//float Gravity = 1.0f;
-		//if (GetCharacterMovement()->GravityScale < 0.0f) { Gravity = GetCharacterMovement()->GravityScale; } * 1;//Gravity;
-
 void ASoozeCharacter::GlideDive()
 {
 	if (IsGliding)
@@ -271,6 +265,7 @@ void ASoozeCharacter::GlideDive()
 		bIsDiving = false;
 	}
 }
+
 
 void ASoozeCharacter::ApplyOriginalSettings()
 {

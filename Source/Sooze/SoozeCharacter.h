@@ -138,7 +138,6 @@ protected:
 
 	void GlideDive();
 	
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	bool IsGliding = false;
 
@@ -175,8 +174,6 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	FORCEINLINE UCustomCharacterMovementComponent* GetCustomCharacterMovement() const { return MovementComponent; }
-
-	void SetGravity(float Gravity);
 
 };
 
