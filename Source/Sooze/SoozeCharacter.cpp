@@ -50,6 +50,7 @@ ASoozeCharacter::ASoozeCharacter(const FObjectInitializer& ObjectInitializer)
 	FollowCamera->bUsePawnControlRotation = false;
 }
 
+
 void ASoozeCharacter::BeginPlay()
 {
 	Super::BeginPlay();

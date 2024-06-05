@@ -27,6 +27,7 @@ public:
 	UFUNCTION(BlueprintPure)
 	FVector GetClimbSurfaceNormal() const;
 
+
 private:
 	virtual void BeginPlay() override;
 
@@ -50,10 +51,11 @@ private:
 
 	virtual void OnMovementModeChanged(EMovementMode PreviousMovementMode, uint8 PreviousCustomMode) override;
 
-	virtual float GetMaxSpeed() const override;
 	virtual float GetMaxAcceleration()const override;
 
 	void PhysClimbing(float deltaTime, int32 Iterations);
+
+	virtual float GetMaxSpeed() const override;
 
 
 	void ComputeSurfaceInfo();
