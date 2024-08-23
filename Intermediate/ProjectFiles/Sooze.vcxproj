@@ -111,7 +111,7 @@
     <None Include="..\..\Source\SoozeEditor.Target.cs"/>
     <None Include="..\..\.gitattributes"/>
     <None Include="..\..\.gitignore"/>
-    <None Include="..\..\.vsconfig"/>
+    <None Include="..\..\dynamicLowpolyGras.png"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
