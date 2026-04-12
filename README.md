@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=-eNHTrF8kY0
+
 ## Climbing mechanic
 <img width="355" height="593" alt="image" src="https://github.com/user-attachments/assets/6acd272d-c184-4157-be56-4dfbba2246cb" />
 
